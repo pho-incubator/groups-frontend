@@ -1,0 +1,289 @@
+/*
+  	This stylesheet contains basic style information related to main layout.
+    It defines the structure of Grou.ps product. All the classes here in this
+    file starts with 'groups-' prefix.
+*/
+
+/* MODEL: Box */
+
+.groups-box {
+    overflow: hidden;
+    padding: 0;
+    border: 1px solid rgba(0, 0, 0, .075);
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, .05), 0 .15em .1em 0 rgba(0, 0, 0, .075);
+    transition: box-shadow .35s ease;
+    border-radius: 9px;
+}
+
+.groups-box:hover {
+    box-shadow: 0 0 1em 0 rgba(0, 0, 0, .1), 0 .15em .1em 0 rgba(0, 0, 0, .1);
+}
+
+.groups-box > .title {
+    margin: 0;
+    padding: .5em 1.5em;
+}
+
+.groups-box > .content {
+    margin: 0;
+    padding: 1.5em;
+}
+
+/* LAYOUT: Navigation */
+
+.groups-navigation {
+    padding-right: 0;
+}
+
+.groups-controls {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 3.5rem;
+    padding: calc((3.5rem - 40px) / 2);
+}
+
+.groups-controls::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+.groups-controls > * {
+    float: left;
+}
+
+.groups-notifications {
+    display: inline-block;
+}
+
+.groups-brand {
+    max-width: 15em;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.groups-navigation .navbar-toggler {
+    padding-left: 0;
+    padding-right: 0;
+    border: none;
+    outline: none;
+}
+
+.groups-logo {
+    height: 2.5rem;
+    margin-top: .1875rem;
+    margin-bottom: -.8125rem;
+    display: block;
+}
+
+.groups-settings-button span {
+    display: inline;
+}
+
+.groups-settings-button svg {
+    display: none;
+    width: 1rem;
+    height: auto;
+    opacity: .5;
+    transition: opacity .25s ease;
+}
+
+.groups-settings-button:hover svg {
+    opacity: .75;
+}
+
+/* LAYOUT: Content */
+
+.groups-content {
+    margin: 2.5rem auto;
+}
+
+/* LAYOUT: Sidebar */
+
+.groups-sidebar > * {
+    margin-bottom: 30px;
+}
+
+.groups-sidebar > *:last-child {
+    margin-bottom: 0;
+}
+
+
+/* LAYOUT: Footer */
+
+.groups-footer {
+    font-size: .8rem;
+}
+
+.groups-footer a {
+    margin-right: 1rem;
+}
+
+.groups-footer .groups-credit {
+    opacity: .75;
+    color: rgb(127, 127, 127);
+    transition: opacity .35 ease;
+}
+
+.groups-footer .groups-credit:hover {
+    opacity: 1;
+    color: rgb(127, 127, 127);
+    text-decoration: none;
+}
+
+.groups-footer .groups-credit svg {
+    position: relative;
+    top: .275em;
+    height: 1.5em;
+}
+
+.groups-footer .groups-credit svg path {
+    fill: rgb(127, 127, 127);
+}
+
+.groups-footer .groups-rainbow {
+    display: inline;
+    z-index: 1;
+    opacity: .5;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    margin-bottom: -.075em;
+    margin-right: -.025em;
+    font-size: 2.5em;
+    line-height: 1em;
+    vertical-align: middle;
+    cursor: pointer;
+    transition: all 0s ease;
+}
+
+.groups-footer .groups-rainbow.static {
+    z-index: 2;
+    opacity: 1;
+}
+
+.groups-footer .groups-rainbow.static:hover + .groups-rainbow {
+    opacity: 0;
+    font-size: 12.5em;
+    transition: all .5s ease-in-out;
+}
+
+/* Page: Error */
+
+#groups-page-error {
+    text-align: center;
+}
+
+#groups-page-error svg {
+    margin-bottom: 30px;
+}
+
+#groups-page-error h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+#groups-page-error p {
+    font-size: 1.25em;
+}
+
+/* UI: Link */
+
+.groups-link {
+    border-bottom-width: 1px;
+		border-bottom-style: dotted;
+		text-decoration: none;
+    transition: all .25s ease;
+}
+
+.groups-link:hover, .groups-link:active {
+		text-decoration: none;
+}
+
+/* UI: Input */
+
+.groups-input {}
+
+/* UI: Input Prefix */
+
+div.groups-input-prefix {}
+
+/* COMPONENT: Information */
+
+.groups-information {
+    text-align: center;
+}
+
+/* COMPONENT: Invitation */
+
+.groups-invitation {
+    text-align: center;
+}
+
+/* COMPONENT: Settings */
+
+.groups-settings {
+    width: 30em;
+    margin: 0 auto;
+}
+
+.groups-settings > div {
+    width: 100%;
+    margin-bottom: 1.5em;
+}
+
+.groups-settings > div::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.groups-settings > div:last-of-type {
+    margin-bottom: 2.5em;
+}
+
+.groups-settings > div > label {
+    margin-bottom: .5em;
+    font-weight: bold;
+}
+
+.groups-settings > div.colors > label {
+    width: 100%;
+}
+
+.groups-settings > div.colors > span {
+    float: left;
+    width: 32%;
+    margin-right: 2%;
+}
+
+.groups-settings > div.colors > span:last-child {
+    margin-right: 0;
+}
+
+.groups-settings > div.colors > span > label {
+    width: 100%;
+    font-size: .85em;
+}
+
+.groups-settings > button {
+    margin-right: 1em;
+}
+
+/* OPTION: Public/Private Feature */
+
+.private-feature {
+    display: none;
+}
+
+body.logged .private-feature {
+    display: block;
+}
+
+body.logged .public-feature {
+    display: none;
+}
