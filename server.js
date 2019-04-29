@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+var morgan = require('morgan');
 const asyncMiddleware = require('./lib/asyncMiddleware');
 const app = express();
 const port = 8000;
@@ -9,6 +10,10 @@ require('dotenv').config();
 
 app.use(bodyParser.urlencoded({
     extended: true,
+}));
+
+app.use(morgan('combined', {
+    immediate: true
 }));
 
 app.get('/', asyncMiddleware(require('./index')));
