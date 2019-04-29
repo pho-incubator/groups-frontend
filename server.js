@@ -22,8 +22,10 @@ app.use('/site/vendor', express.static('site/vendor'));
 app.use('/site/scripts', express.static('site/scripts'));
 app.use('/site/styles', express.static('site/styles'));
 app.use('/site/images', express.static('site/images'));
-//app.use('/site/404.html', express.static('site/404.html'));
+app.use('/site/404.html', express.static('site/404.html'));
 app.use('/dist', express.static('dist'));
-app.get('*', express.static('site/404.html'));
+app.get('*', function(req, res) {
+    res.redirect('/site/404.html');
+  });
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
