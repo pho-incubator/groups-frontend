@@ -1,7 +1,10 @@
 const nunjucks = require('nunjucks');
 
 module.exports = async function (req, res) {
-
+    if(process.env.REDIRECT!=undefined) {
+        res.redirect(process.env.REDIRECT);
+        return;
+    }
     nunjucks.configure(__dirname + '/site/templates', { autoescape: true });
 
     const goal = 'show';
