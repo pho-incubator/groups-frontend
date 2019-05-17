@@ -15,6 +15,7 @@ module.exports = async function (req, res) {
     const host = "https://gjs-singlesignon.herokuapp.com";
     const streamHost = "";
     const theme = "light";
+    const moduleForum = "off";
     
     let page = req.query.page;
     if (! page) {
@@ -36,6 +37,7 @@ module.exports = async function (req, res) {
                 host,
                 theme,
                 stream_host: streamHost,
+                module_forum: moduleForum
             }
         )
     );

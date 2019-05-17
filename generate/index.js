@@ -26,6 +26,7 @@ module.exports = async function (req, res) {
     const streamHost = q.stream_host || body.stream_host || null;
     const secret = q.secret || body.secret || null;
     const regen = q.regen || body.regen || false;
+    const moduleForum = q.module_forum || body.module_forum || false;
 
     if (! name || ! title || ! publicId) {
         res.setHeader('Content-Type', 'application/json');
@@ -56,7 +57,7 @@ module.exports = async function (req, res) {
     await (new FileGeneration(
         dir, name, title, theme, publicId, primaryColor,
         textColor, backgroundColor, host, streamHost,
-        remoteUrl, description
+        remoteUrl, description, moduleForum
     )).generate(regen);
 
     res.setHeader('Content-Type', 'application/json');

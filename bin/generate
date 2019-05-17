@@ -17,6 +17,7 @@ cmd.option('-p, --primary_color, <primary_color>', 'Primary Color');
 cmd.option('-t, --text_color, <text_color>', 'Text Color');
 cmd.option('-b, --background_color, <background_color>', 'Background Color');
 cmd.option('-t, --theme, <theme>', 'Theme (light or dark)');
+cmd.option('-m, --modules, <modules>', 'List of extra modules to enable; forum');
 
 let args = [];
 let name;
@@ -43,12 +44,23 @@ const primaryColor = cmd.primary_color || null;
 const host = cmd.host || null;
 const streamHost = cmd.stream_host || null;
 const description = (cmd.hasOwnProperty('description') && cmd.description) || '';
-const remote_url = cmd.git || '';
+const remoteUrl = cmd.git || '';
+const modules = cmd.modules.split(",") || '';
+
+var moduleForum = "off";
+
+for(let i=0;i<modules.length;i++) {
+    switch(modules[i].trim()) {
+        case "forum":
+            moduleForum = "on";
+            break;
+    }
+}
 
 (new FileGeneration(
     dir, name, title, theme, publicId, primaryColor,
     textColor, backgroundColor, host, streamHost,
-    remote_url, description
+    remoteUrl, description, moduleForum
 )).generate().catch(function (error) {
     console.error(error);
 });
