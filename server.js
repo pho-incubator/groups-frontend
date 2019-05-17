@@ -3,7 +3,9 @@ const bodyParser = require('body-parser');
 var morgan = require('morgan');
 const asyncMiddleware = require('./lib/asyncMiddleware');
 const app = express();
-const port = 8000;
+
+let args = process.argv;
+const port = args[2] || 8000;
 
 // load environment variables
 require('dotenv').config();
