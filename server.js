@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 var morgan = require('morgan');
 const asyncMiddleware = require('./lib/asyncMiddleware');
 const app = express();
@@ -10,6 +11,7 @@ const port = args[2] || 8000;
 // load environment variables
 require('dotenv').config();
 
+app.use(cookieParser());
 app.use(bodyParser.urlencoded({
     extended: true,
 }));

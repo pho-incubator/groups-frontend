@@ -5,10 +5,20 @@ module.exports = async function (req, res) {
         res.redirect(process.env.REDIRECT);
         return;
     }
+
+    const query = req.query;
+
+    if (query.cookies) {
+        const cookies = JSON.parse(query.cookies);
+        for (cookieName in cookies) {
+            res.cookie(cookieName, cookies[cookieName], {});
+        }
+    }
+
     nunjucks.configure(__dirname + '/site/templates', { autoescape: true });
 
     const goal = 'show';
-    const publicId = '79982844-6a27-4b3b-b77f-419a79be0e10';
+    const publicId = query.public_id || '79982844-6a27-4b3b-b77f-419a79be0e10';
     const primaryColor = '#6f879f';
     const textColor = '#3f5f7f';
     const backgroundColor = '#ffffff';
@@ -17,7 +27,7 @@ module.exports = async function (req, res) {
     const theme = "light";
     const moduleForum = "off";
     
-    let page = req.query.page;
+    let page = query.page;
     if (! page) {
         return res.send('page parameter is missing');
     }
