@@ -26,6 +26,7 @@ module.exports = async function (req, res) {
     const streamHost = "";
     const theme = "light";
     const moduleForum = "off";
+    const extraHead = "";
     
     let page = query.page;
     if (! page) {
