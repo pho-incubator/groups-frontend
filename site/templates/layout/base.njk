@@ -29,7 +29,7 @@
 		<link rel="icon" type="image/png" href="/site/images/identity/icon.png">
 		<link rel="apple-touch-icon" href="/site/images/identity/icon-touch.png">
     <!-- Extra Head, if any -->
-    {{ extra_head }}
+    {{ extra_head|safe }}
 </head>
 <body class="{{ theme }}" style="color: {{ text_color }}">
 <!-- Navigation -->
