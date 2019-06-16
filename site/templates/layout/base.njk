@@ -54,9 +54,11 @@
             <li class="nav-item{% if (title==="Members") %} active{% endif %}">
                 <a class="nav-link" href="{% if (goal==="show") %}/?page=members{% else %}/{{ name }}/members{% endif %}">Members</a>
             </li>
+            {% if (module_forum==="on") %}
             <li class="nav-item{% if (title==="Groups") %} active{% endif %}">
                 <a class="nav-link" href="{% if (goal==="show") %}/?page=groups{% else %}/{{ name }}/groups{% endif %}">Groups</a>
             </li>
+            {% endif %}
             {% if (module_forum==="on") %}
             <li class="nav-item{% if (title==="Forum") %} active{% endif %}">
                 <a class="nav-link" href="{% if (goal==="show") %}/?page=forum{% else %}/{{ name }}/forum{% endif %}">Forum</a>

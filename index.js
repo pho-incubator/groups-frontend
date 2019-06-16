@@ -26,6 +26,7 @@ module.exports = async function (req, res) {
     const streamHost = "";
     const theme = "light";
     const moduleForum = "off";
+    const moduleGroups = "off";
     const extraHead = "";
     
     let page = query.page;
@@ -48,7 +49,8 @@ module.exports = async function (req, res) {
                 host,
                 theme,
                 stream_host: streamHost,
-                module_forum: moduleForum
+                module_forum: moduleForum,
+                module_groups: moduleGroups
             }
         )
     );
